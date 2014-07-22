@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">Day Clock</string>
+    <string name="action_preferences">Settings</string>
+
+    <string name="label_OK">OK</string>
+    <string name="label_cancel">Cancel</string>
+    
+    <string name="pref_period_text">Period name</string>
+    <string name="pref_period_allDays">Period occurs every day</string>
+    <string name="pref_period_start">Start time</string> <!-- Default values: 0 = 1am; -60000 = 12.59am; 39,600,000 = noon i.e. ((H-1)*60+M)*60000 -->
+    <string name="pref_period_days">Set active days for this period</string>
+    <string name="pref_period_tillNext">Until next period starts</string>
+    <string name="pref_period_end">End time</string>
+
+    <!-- Default values: 0 = 1am; -60,000 = 12.59am; 39,600,000 = noon i.e. ((H-1)*60+M)*60000 -->
+    <string name="pref_period1">Period 1</string>
+    <string name="pref_period1_text_def">Early hours</string>
+    <string name="pref_period1_start_def">0</string>
+    <string name="pref_period2">Period 2</string>
+    <string name="pref_period2_text_def">Morning</string>
+    <string name="pref_period2_start_def">28800000</string>
+    <string name="pref_period3">Period 3</string>
+    <string name="pref_period3_text_def">Afternoon</string>
+    <string name="pref_period3_start_def">43200000</string>
+    <string name="pref_period4">Period 4</string>
+    <string name="pref_period4_text_def">Tea time</string>
+    <string name="pref_period4_start_def">58500000</string>
+    <string name="pref_period5">Period 5</string>
+    <string name="pref_period5_text_def">Evening</string>
+    <string name="pref_period5_start_def">64800000</string>
+    <string name="pref_period6">Period 6</string>
+    <string name="pref_period6_text_def">Night</string>
+    <string name="pref_period6_start_def">79200000</string>
+    <string name="pref_period7">Period 7</string>
+    <string name="pref_period7_text_def"></string>
+    <string name="pref_period7_start_def">-3600000</string>
+    <string name="pref_period8">Period 8</string>
+    <string name="pref_period8_text_def"></string>
+    <string name="pref_period8_start_def">-3600000</string>
+    <string name="prologue">The initial text, e.g. The time is</string>
+    <string name="summarySize">Size of text for initial text</string>
+    <string name="daySize">Size of text for day name</string>
+    <string name="prologueTitle">Initial text</string>
+    <string name="prologueSizeTitle">Initial text size</string>
+    <string name="daySizeTitle">Day text size</string>
+    <string name="timeSize">Size of text for time</string>
+    <string name="timeSizeTitle">Time text size</string>
+    <string name="prologueDef">It is now</string>
+    <string name="layout">Layout</string>
+    <string name="layoutSummary">Layout text and sizes</string>
+    <string name="summary_disabled">&lt;disabled></string>
+
+</resources>
