@@ -2,7 +2,6 @@
 .metadata/
 # larger generated files
 jarlist.cache
-*.apk
 *.dex
 *.class
 bin/
