@@ -7,3 +7,4 @@ jarlist.cache
 *.class
 bin/
 gen/
+.classpath
