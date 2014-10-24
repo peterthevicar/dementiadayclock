@@ -54,5 +54,6 @@
     <string name="summary_disabled">&lt;disabled></string>
     <string name="colours">Colours</string>
     <string name="colours_summary">Colours for text and background</string>
+    <string name="keep_screen_on">Keep screen on</string>
 
 </resources>

@@ -1,7 +1,0 @@
-INDEX VERSION 1.126+/media/peter/Android/dayclock-workspace/.metadata/.plugins/org.eclipse.jdt.core
-1085626653.index
-1270315800.index
-3458304857.index
-3855013197.index
-3767171145.index
-1748835833.index

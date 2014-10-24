@@ -1,4 +1,9 @@
 # Ignore eclipse's metadata folder
 .metadata/
-# cache file
+# larger generated files
 jarlist.cache
+*.apk
+*.dex
+*.class
+bin/
+gen/

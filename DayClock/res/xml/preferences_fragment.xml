@@ -29,6 +29,12 @@
             android:key="dateTODSize"
             android:summary="@string/timeSize"
             android:title="@string/timeSizeTitle" />
+        
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="keepScreenOn"
+            android:title="@string/keep_screen_on" />
+        
     </PreferenceScreen>
 	<PreferenceScreen
 	    android:key="pref_colours" 

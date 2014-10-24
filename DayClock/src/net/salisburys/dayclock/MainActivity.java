@@ -25,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -129,8 +130,12 @@ public class MainActivity extends Activity {
 			return false;
 		}
 		try {
+			// Make sure 'keep on' flag is set correctly
+			if (sharedPrefs.getBoolean("keepScreenOn", true))
+				getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+			else
+				getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 			// Get general preference values
-
 			String sPrologue = sharedPrefs.getString("prologue", "");
 			Integer iPrologueSize = Integer.parseInt(sharedPrefs.getString(
 					"prologueSize", ""));
