@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="275" key="DIALOG_WIDTH"/>
+		<item value="117" key="DIALOG_Y_ORIGIN"/>
+		<item value="683" key="DIALOG_X_ORIGIN"/>
+		<item value="416" key="DIALOG_HEIGHT"/>
+		<item value="1|Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="TextPrefSummary" key="selection"/>
+		<list key="findhistory">
+			<item value="periodpref"/>
+			<item value="or in settings"/>
+			<item value="setPeriodSummaries"/>
+			<item value="sharedprefs"/>
+			<item value="persist"/>
+			<item value="period1"/>
+			<item value="PreferenceManager"/>
+			<item value="&amp;gt;"/>
+		</list>
+		<list key="replacehistory">
+			<item value="TextPrefSummary"/>
+			<item value="period8"/>
+			<item value="period7"/>
+			<item value="period6"/>
+			<item value="period5"/>
+			<item value="period4"/>
+			<item value="period3"/>
+			<item value="period2"/>
+		</list>
+	</section>
+</section>
