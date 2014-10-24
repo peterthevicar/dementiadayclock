@@ -1,4 +1,4 @@
 # Ignore eclipse's metadata folder
-.metadata
+.metadata/
 # cache file
 jarlist.cache
