@@ -8,6 +8,6 @@
         android:id="@+id/action_preferences"
         android:orderInCategory="100"
         android:title="@string/action_preferences"
-        android:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"/>
     
 </menu>

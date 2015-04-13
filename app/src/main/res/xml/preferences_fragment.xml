@@ -26,10 +26,16 @@
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="60"
             android:inputType="number"
-            android:key="dateTODSize"
-            android:summary="@string/timeSize"
-            android:title="@string/timeSizeTitle" />
-        
+            android:key="datePERSize"
+            android:summary="Size of text for period in day"
+            android:title="Period text size" />
+        <net.salisburys.dayclock.TextPrefSummary
+            android:defaultValue="10"
+            android:inputType="number"
+            android:key="dateTIMSize"
+            android:summary="Size of text for time"
+            android:title="Time text size" />
+
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="keepScreenOn"

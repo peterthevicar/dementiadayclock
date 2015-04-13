@@ -3,7 +3,8 @@ package net.salisburys.dayclock;
 import java.util.Calendar;
 import java.util.Set;
 
-import android.util.Log;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.util.TypedValue;
 import android.text.format.DateFormat;
 import android.text.format.Time;
@@ -31,7 +32,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 	SharedPreferences sharedPrefs;
 	SettingsFragment settingsFrag;
 
@@ -39,7 +40,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		//getActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 		PreferenceManager.setDefaultValues(this, R.xml.preferences_fragment,
 				false);
 		sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -141,8 +143,10 @@ public class MainActivity extends Activity {
 					"prologueSize", ""));
 			Integer iDOWSize = Integer.parseInt(sharedPrefs.getString(
 					"dateDOWSize", ""));
-			Integer iTODSize = Integer.parseInt(sharedPrefs.getString(
-					"dateTODSize", ""));
+            Integer iPERSize = Integer.parseInt(sharedPrefs.getString(
+                    "dateTODSize", ""));
+            Integer iTIMSize = Integer.parseInt(sharedPrefs.getString(
+                    "dateTIMSize", ""));
 
 			// Now decide which period is current
 			//Calendar now = Calendar.getInstance();
@@ -205,17 +209,24 @@ public class MainActivity extends Activity {
 			prologueText
 					.setTextSize(TypedValue.COMPLEX_UNIT_DIP, iPrologueSize);
 			prologueText.setTextColor(iTextColour);
-			TextView dateDOW = (TextView) findViewById(R.id.dateDOW);
+			TextView tvDateDOW = (TextView) findViewById(R.id.dateDOW);
 			String s_dateDOW = (String) DateFormat.format("EEEE",
 					System.currentTimeMillis());
-			dateDOW.setText(s_dateDOW);
-			dateDOW.setTextSize(TypedValue.COMPLEX_UNIT_DIP, iDOWSize);
-			dateDOW.setTextColor(iTextColour);
+			tvDateDOW.setText(s_dateDOW);
+			tvDateDOW.setTextSize(TypedValue.COMPLEX_UNIT_DIP, iDOWSize);
+			tvDateDOW.setTextColor(iTextColour);
 
-			TextView tvDateTOD = (TextView) findViewById(R.id.dateTOD);
-			tvDateTOD.setText(datePeriod);
-			tvDateTOD.setTextSize(TypedValue.COMPLEX_UNIT_DIP, iTODSize);
-			tvDateTOD.setTextColor(iTextColour);
+            TextView tvDatePER = (TextView) findViewById(R.id.datePER);
+            tvDatePER.setText(datePeriod);
+            tvDatePER.setTextSize(TypedValue.COMPLEX_UNIT_DIP, iPERSize);
+            tvDatePER.setTextColor(iTextColour);
+
+            TextView tvDateTIM = (TextView) findViewById(R.id.dateTIM);
+            String sDateTIM = (String) DateFormat.format("HH:MM",
+                    System.currentTimeMillis());
+            tvDateTIM.setText(sDateTIM);
+            tvDateTIM.setTextSize(TypedValue.COMPLEX_UNIT_DIP, iTIMSize);
+            tvDateTIM.setTextColor(iTextColour);
 			return true;
 		} catch (Exception e) {
 			showToast("Error in settings:" + e.getMessage());
