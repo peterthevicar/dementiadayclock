@@ -140,13 +140,13 @@ public class MainActivity extends ActionBarActivity {
 			// Get general preference values
 			String sPrologue = sharedPrefs.getString("prologue", "");
 			Integer iPrologueSize = Integer.parseInt(sharedPrefs.getString(
-					"prologueSize", ""));
+					"prologueSize", "20"));
 			Integer iDOWSize = Integer.parseInt(sharedPrefs.getString(
-					"dateDOWSize", ""));
+					"dateDOWSize", "20"));
             Integer iPERSize = Integer.parseInt(sharedPrefs.getString(
-                    "dateTODSize", ""));
+                    "datePERSize", "20"));
             Integer iTIMSize = Integer.parseInt(sharedPrefs.getString(
-                    "dateTIMSize", ""));
+                    "dateTIMSize", "20"));
 
 			// Now decide which period is current
 			//Calendar now = Calendar.getInstance();
