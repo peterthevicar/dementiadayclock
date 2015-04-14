@@ -21,5 +21,17 @@
     </string-array>
     <string-array name="pref_period_defaultValues">
     </string-array>
+    <string-array name="pref_TIM_names">
+        <item>21:26</item>
+        <item>9:26</item>
+        <item>9:26 pm</item>
+    </string-array>
+    <string-array name="pref_TIM_values">
+        <item>HH:mm</item>
+        <item>K:mm</item>
+        <item>K:mm A</item>
+    </string-array>
+    <string-array name="pref_TIM_defaultValues">
+    </string-array>
 
 </resources>
