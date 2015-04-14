@@ -222,7 +222,8 @@ public class MainActivity extends ActionBarActivity {
             tvDatePER.setTextColor(iTextColour);
 
             TextView tvDateTIM = (TextView) findViewById(R.id.dateTIM);
-            String sDateTIM = (String) DateFormat.format("HH:mm",
+            String sTIMFormat = sharedPrefs.getString("dateTIMFormat", "K:mm A");
+            String sDateTIM = (String) DateFormat.format(sTIMFormat,
                     System.currentTimeMillis());
             tvDateTIM.setText(sDateTIM);
             tvDateTIM.setTextSize(TypedValue.COMPLEX_UNIT_DIP, iTIMSize);
