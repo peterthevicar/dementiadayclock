@@ -7,3 +7,7 @@ jarlist.cache
 bin/
 gen/
 .classpath
+build/
+app/build/
+.gradle/
+local.properties
