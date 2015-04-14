@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
+<module external.linked.project.path="/Disks/Data/Peter/9-Personal/home/Android/AndroidStudioProjects/dementiadayclock" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="java-gradle" name="Java-Gradle">
+      <configuration>
+        <option name="BUILD_FOLDER_PATH" value="/Disks/Data/Peter/9-Personal/home/Android/AndroidStudioProjects/dementiadayclock/build" />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <content url="file:///Disks/Data/Peter/9-Personal/home/Android/AndroidStudioProjects/dementiadayclock">
+      <excludeFolder url="file:///Disks/Data/Peter/9-Personal/home/Android/AndroidStudioProjects/dementiadayclock/.gradle" />
+    </content>
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

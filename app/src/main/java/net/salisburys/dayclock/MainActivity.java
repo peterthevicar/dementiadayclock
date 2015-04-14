@@ -40,8 +40,8 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+     //   ActionBar actionBar = getSupportActionBar();
+     //   actionBar.setDisplayHomeAsUpEnabled(true);
 		PreferenceManager.setDefaultValues(this, R.xml.preferences_fragment,
 				false);
 		sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -244,8 +244,25 @@ public class MainActivity extends ActionBarActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
-	@Override
+    private boolean inSettings=false;
+    private boolean popSettings() {
+        // pop the settings fragment off the stack or return true
+        if (inSettings) {
+            FragmentTransaction trans = getFragmentManager()
+                    .beginTransaction();
+            getFragmentManager().popBackStack();
+            trans.commit();
+            inSettings=false;
+            return false;
+        }
+        else return true;
+    }
+    @Override
+    public void onBackPressed() {
+        // This is to avoid the app closing when back is pressed in settings fragment
+        if (popSettings()) super.onBackPressed();
+    }
+    @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
@@ -260,21 +277,16 @@ public class MainActivity extends ActionBarActivity {
 				trans.replace(R.id.container, settingsFrag);
 				trans.addToBackStack(null);
 				trans.commit();
-			}
+                inSettings=true;
+            }
 			return true;
 		case android.R.id.home:
 			// Implement UP
-			if (getFragmentManager().getBackStackEntryCount() >= 1) {
-				FragmentTransaction trans = getFragmentManager()
-						.beginTransaction();
-				getFragmentManager().popBackStack();
-				trans.commit();
-			}
+			popSettings();
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
-
 	/*
 	 * ******* Preferences
 	 */

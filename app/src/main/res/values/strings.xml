@@ -7,7 +7,7 @@
     <string name="label_OK">OK</string>
     <string name="label_cancel">Cancel</string>
     
-    <string name="pref_period_text">Period name</string>
+    <string name="pref_period_text">Period name (blank to disable period)</string>
     <string name="pref_period_contrast">Use contrast colours</string>
     <string name="pref_period_allDays">Period occurs every day</string>
     <string name="pref_period_start">Start time</string> <!-- Default values: 0 = 1am; -60000 = 12.59am; 39,600,000 = noon i.e. ((H-1)*60+M)*60000 -->
