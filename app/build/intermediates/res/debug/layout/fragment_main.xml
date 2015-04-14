@@ -25,10 +25,17 @@
         android:gravity="center_vertical|center_horizontal" />
 
     <TextView
-        android:id="@+id/dateTOD"
+        android:id="@+id/datePER"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dateDOW"
         android:gravity="center_vertical|center_horizontal" />
 
-</RelativeLayout><!-- From: file:/home/peter/AndroidStudioProjects/DayClock/app/src/main/res/layout/fragment_main.xml -->
+    <TextView
+        android:id="@+id/dateTIM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/datePER"
+        android:gravity="center_vertical|center_horizontal" />
+
+</RelativeLayout><!-- From: file:/Disks/Data/Peter/9-Personal/home/Android/AndroidStudioProjects/dementiadayclock/app/src/main/res/layout/fragment_main.xml -->

@@ -8,7 +8,7 @@
         android:id="@+id/action_preferences"
         android:orderInCategory="100"
         android:title="@string/action_preferences"
-        android:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"/>
     
 </menu>
-<!-- From: file:/home/peter/AndroidStudioProjects/DayClock/app/src/main/res/menu/main.xml -->
+<!-- From: file:/Disks/Data/Peter/9-Personal/home/Android/AndroidStudioProjects/dementiadayclock/app/src/main/res/menu/main.xml -->

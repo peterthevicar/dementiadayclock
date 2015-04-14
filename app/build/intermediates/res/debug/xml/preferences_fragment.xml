@@ -26,10 +26,16 @@
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="60"
             android:inputType="number"
-            android:key="dateTODSize"
-            android:summary="@string/timeSize"
-            android:title="@string/timeSizeTitle" />
-        
+            android:key="datePERSize"
+            android:summary="Size of text for period in day"
+            android:title="Period text size" />
+        <net.salisburys.dayclock.TextPrefSummary
+            android:defaultValue="10"
+            android:inputType="number"
+            android:key="dateTIMSize"
+            android:summary="Size of text for time"
+            android:title="Time text size" />
+
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="keepScreenOn"
@@ -417,4 +423,4 @@
             android:title="@string/pref_period_days" />
     </PreferenceScreen>
 
-</PreferenceScreen><!-- From: file:/home/peter/AndroidStudioProjects/DayClock/app/src/main/res/xml/preferences_fragment.xml -->
+</PreferenceScreen><!-- From: file:/Disks/Data/Peter/9-Personal/home/Android/AndroidStudioProjects/dementiadayclock/app/src/main/res/xml/preferences_fragment.xml -->
