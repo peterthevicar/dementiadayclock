@@ -22,10 +22,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: net.salisburys.dayclock" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="392d7376-38b5-42e2-b2c9-ca993fbc090e" name="Default" comment="Version 4.0">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Release/DayClock-v4-0.apk" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Release/manifest-merger-release-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+    <list default="true" id="392d7376-38b5-42e2-b2c9-ca993fbc090e" name="Default" comment="Version 4">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DayClock.iws" />
@@ -1582,7 +1579,11 @@
       <created>1429043129543</created>
       <updated>1429043129543</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Version 4">
+      <created>1429044599337</created>
+      <updated>1429044599337</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1640,7 +1641,8 @@
     <MESSAGE value="Fix invalid int in Period size preference" />
     <MESSAGE value="Implement more consistent back behaviour in settings" />
     <MESSAGE value="Add in a format dialog for the time display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add in a format dialog for the time display" />
+    <MESSAGE value="Version 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
