@@ -36,7 +36,7 @@
             android:summary="Size of text for time"
             android:title="Time text size" />
         <ListPreference
-            android:defaultValue="K:mm A"
+            android:defaultValue="h:mm a"
             android:entries="@array/pref_TIM_names"
             android:entryValues="@array/pref_TIM_values"
             android:key="dateTIMFormat"
