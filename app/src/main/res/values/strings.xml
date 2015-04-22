@@ -40,20 +40,6 @@
     <string name="pref_period8">Period 8</string>
     <string name="pref_period8_text_def"></string>
     <string name="pref_period8_start_def">-3600000</string>
-    <string name="prologue">The initial text, e.g. The time is</string>
-    <string name="summarySize">Size of text for initial text</string>
-    <string name="daySize">Size of text for day name</string>
-    <string name="prologueTitle">Initial text</string>
-    <string name="prologueSizeTitle">Initial text size</string>
-    <string name="daySizeTitle">Day text size</string>
-    <string name="timeSize">Size of text for time</string>
-    <string name="timeSizeTitle">Time text size</string>
-    <string name="prologueDef">It is now</string>
-    <string name="layout">Layout</string>
-    <string name="layoutSummary">Layout text and sizes</string>
-    <string name="summary_disabled">&lt;disabled></string>
-    <string name="colours">Colours</string>
-    <string name="colours_summary">Colours for text and background</string>
-    <string name="keep_screen_on">Keep screen on</string>
+    <string name="summary_disabled">&lt;not set&gt;></string>
 
 </resources>

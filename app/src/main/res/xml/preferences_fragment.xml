@@ -4,37 +4,32 @@
 
     <PreferenceScreen
         android:persistent="false"
-        android:title="@string/layout" 
-        android:summary="@string/layoutSummary">
+        android:title="General"
+        android:summary="Text size, time format, keep screen on">
         <net.salisburys.dayclock.TextPrefSummary
-            android:defaultValue="@string/prologueDef"
+            android:defaultValue="It is now"
             android:key="prologue"
-            android:summary="@string/prologue"
-            android:title="@string/prologueTitle" />
+            android:title="Initial text, e.g. It is now" />
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="40"
             android:inputType="number"
             android:key="prologueSize"
-            android:summary="@string/summarySize"
-            android:title="@string/prologueSizeTitle" />
+            android:title="Initial text size (0 to disable)" />
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="70"
             android:inputType="number"
             android:key="dateDOWSize"
-            android:summary="@string/daySize"
-            android:title="@string/daySizeTitle" />
+            android:title="Day text size (0 to disable)" />
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="60"
             android:inputType="number"
             android:key="datePERSize"
-            android:summary="Size of text for period in day"
-            android:title="Period text size" />
+            android:title="Period text size (0 to disable)" />
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="10"
             android:inputType="number"
             android:key="dateTIMSize"
-            android:summary="Size of text for time"
-            android:title="Time text size" />
+            android:title="Time text size (0 to disable)" />
         <ListPreference
             android:defaultValue="h:mm a"
             android:entries="@array/pref_TIM_names"
@@ -45,13 +40,14 @@
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="keepScreenOn"
-            android:title="@string/keep_screen_on" />
+            android:title="Keep screen on always" />
         
     </PreferenceScreen>
 	<PreferenceScreen
 	    android:key="pref_colours" 
-        android:title="@string/colours" 
-        android:summary="@string/colours_summary">
+        android:title="Colour schemes"
+        android:summary="Text and background colours">
+
         <com.chiralcode.colorpicker.ColorPickerPreference
             android:title="Normal Text Colour"
             android:defaultValue="0xff000040"
@@ -60,6 +56,7 @@
             android:title="Normal Background Colour"
             android:defaultValue="0xffffffe0"
             android:key="bgColour1" />
+
         <com.chiralcode.colorpicker.ColorPickerPreference
             android:title="Contrast Text Colour"
             android:defaultValue="0xffb030b0"
@@ -68,6 +65,7 @@
             android:title="Contrast Background Colour"
             android:defaultValue="0xfff8f820"
             android:key="bgColour2" />
+
         <com.chiralcode.colorpicker.ColorPickerPreference
             android:title="Night Text Colour"
             android:defaultValue="0xff8080c0"
@@ -76,6 +74,51 @@
             android:title="Night Background Colour"
             android:defaultValue="0xff000040"
             android:key="bgColour3" />
+
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Colour4 Text Colour"
+            android:defaultValue="0xffffffff"
+            android:key="textColour4" />
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Colour4 Background Colour"
+            android:defaultValue="0xff000000"
+            android:key="bgColour4" />
+
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Colour5 Text Colour"
+            android:defaultValue="0xffffffff"
+            android:key="textColour5" />
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Colour5 Background Colour"
+            android:defaultValue="0xff000000"
+            android:key="bgColour5" />
+
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Colour6 Text Colour"
+            android:defaultValue="0xffffffff"
+            android:key="textColour6" />
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Colour6 Background Colour"
+            android:defaultValue="0xff000000"
+            android:key="bgColour6" />
+
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Colour7 Text Colour"
+            android:defaultValue="0xffffffff"
+            android:key="textColour7" />
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Colour7 Background Colour"
+            android:defaultValue="0xff000000"
+            android:key="bgColour7" />
+
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Colour8 Text Colour"
+            android:defaultValue="0xffffffff"
+            android:key="textColour8" />
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Colour8 Background Colour"
+            android:defaultValue="0xff000000"
+            android:key="bgColour8" />
     </PreferenceScreen>
     <PreferenceScreen
         android:key="pref_period1"
