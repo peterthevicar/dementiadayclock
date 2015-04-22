@@ -55,19 +55,27 @@
         <com.chiralcode.colorpicker.ColorPickerPreference
             android:title="Normal Text Colour"
             android:defaultValue="0xff000040"
-            android:key="textColour" />
+            android:key="textColour1" />
         <com.chiralcode.colorpicker.ColorPickerPreference
             android:title="Normal Background Colour"
             android:defaultValue="0xffffffe0"
-            android:key="bgColour" />
+            android:key="bgColour1" />
         <com.chiralcode.colorpicker.ColorPickerPreference
             android:title="Contrast Text Colour"
-            android:defaultValue="0xff8080c0"
-            android:key="textColourCont" />
+            android:defaultValue="0xffb030b0"
+            android:key="textColour2" />
         <com.chiralcode.colorpicker.ColorPickerPreference
             android:title="Contrast Background Colour"
+            android:defaultValue="0xfff8f820"
+            android:key="bgColour2" />
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Night Text Colour"
+            android:defaultValue="0xff8080c0"
+            android:key="textColour3" />
+        <com.chiralcode.colorpicker.ColorPickerPreference
+            android:title="Night Background Colour"
             android:defaultValue="0xff000040"
-            android:key="bgColourCont" />
+            android:key="bgColour3" />
     </PreferenceScreen>
     <PreferenceScreen
         android:key="pref_period1"
@@ -77,10 +85,12 @@
             android:key="pref_period1_text"
             android:title="@string/pref_period_text" />
 
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="pref_period1_contrast"
-            android:title="@string/pref_period_contrast" />
+        <net.salisburys.dayclock.ListPrefSummary
+            android:defaultValue="3"
+            android:key="pref_period1_colour"
+            android:entries="@array/pref_colour_names"
+            android:entryValues="@array/pref_colour_values"
+            android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
             android:defaultValue="@string/pref_period1_start_def"
@@ -122,10 +132,12 @@
             android:key="pref_period2_text"
             android:title="@string/pref_period_text" />
 
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="pref_period2_contrast"
-            android:title="@string/pref_period_contrast" />
+        <net.salisburys.dayclock.ListPrefSummary
+            android:defaultValue="1"
+            android:key="pref_period2_colour"
+            android:entries="@array/pref_colour_names"
+            android:entryValues="@array/pref_colour_values"
+            android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
             android:defaultValue="@string/pref_period2_start_def"
@@ -167,10 +179,12 @@
             android:key="pref_period3_text"
             android:title="@string/pref_period_text" />
 
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="pref_period3_contrast"
-            android:title="@string/pref_period_contrast" />
+        <net.salisburys.dayclock.ListPrefSummary
+            android:defaultValue="1"
+            android:key="pref_period3_colour"
+            android:entries="@array/pref_colour_names"
+            android:entryValues="@array/pref_colour_values"
+            android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
             android:defaultValue="@string/pref_period3_start_def"
@@ -212,10 +226,12 @@
             android:key="pref_period4_text"
             android:title="@string/pref_period_text" />
 
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="pref_period4_contrast"
-            android:title="@string/pref_period_contrast" />
+        <net.salisburys.dayclock.ListPrefSummary
+            android:defaultValue="2"
+            android:key="pref_period4_colour"
+            android:entries="@array/pref_colour_names"
+            android:entryValues="@array/pref_colour_values"
+            android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
             android:defaultValue="@string/pref_period4_start_def"
@@ -257,10 +273,12 @@
             android:key="pref_period5_text"
             android:title="@string/pref_period_text" />
 
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="pref_period5_contrast"
-            android:title="@string/pref_period_contrast" />
+        <net.salisburys.dayclock.ListPrefSummary
+            android:defaultValue="1"
+            android:key="pref_period5_colour"
+            android:entries="@array/pref_colour_names"
+            android:entryValues="@array/pref_colour_values"
+            android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
             android:defaultValue="@string/pref_period5_start_def"
@@ -302,10 +320,12 @@
             android:key="pref_period6_text"
             android:title="@string/pref_period_text" />
 
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="pref_period6_contrast"
-            android:title="@string/pref_period_contrast" />
+        <net.salisburys.dayclock.ListPrefSummary
+            android:defaultValue="3"
+            android:key="pref_period6_colour"
+            android:entries="@array/pref_colour_names"
+            android:entryValues="@array/pref_colour_values"
+            android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
             android:defaultValue="@string/pref_period6_start_def"
@@ -347,10 +367,12 @@
             android:key="pref_period7_text"
             android:title="@string/pref_period_text" />
 
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="pref_period7_contrast"
-            android:title="@string/pref_period_contrast" />
+        <net.salisburys.dayclock.ListPrefSummary
+            android:defaultValue="1"
+            android:key="pref_period7_colour"
+            android:entries="@array/pref_colour_names"
+            android:entryValues="@array/pref_colour_values"
+            android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
             android:defaultValue="@string/pref_period7_start_def"
@@ -392,10 +414,12 @@
             android:key="pref_period8_text"
             android:title="@string/pref_period_text" />
 
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="pref_period8_contrast"
-            android:title="@string/pref_period_contrast" />
+        <net.salisburys.dayclock.ListPrefSummary
+            android:defaultValue="1"
+            android:key="pref_period8_colour"
+            android:entries="@array/pref_colour_names"
+            android:entryValues="@array/pref_colour_values"
+            android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
             android:defaultValue="@string/pref_period8_start_def"

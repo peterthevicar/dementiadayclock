@@ -33,5 +33,15 @@
     </string-array>
     <string-array name="pref_TIM_defaultValues">
     </string-array>
+    <string-array name="pref_colour_names">
+        <item>"Normal"</item>
+        <item>"Contrast"</item>
+        <item>"Night"</item>
+    </string-array>
+    <string-array name="pref_colour_values">
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"3"</item>
+    </string-array>
 
 </resources>

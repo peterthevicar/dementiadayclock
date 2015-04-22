@@ -193,11 +193,9 @@ public class MainActivity extends ActionBarActivity {
 			// First get the correct values out
 			datePeriod = sharedPrefs.getString(
 					bestPrefN.concat("_text"), "");
-			Boolean contrastColour = sharedPrefs.getBoolean(bestPrefN + "_contrast", true);
-			String textColour = (contrastColour? "textColourCont": "textColour");
-			Integer iTextColour = sharedPrefs.getInt(textColour, 0xff000000);
-			String bgColour = (contrastColour? "bgColourCont": "bgColour");
-			Integer iBgColour = sharedPrefs.getInt(bgColour, 0xff000000);
+			String prefColours = sharedPrefs.getString(bestPrefN + "_colour", "1");
+			Integer iTextColour = sharedPrefs.getInt("textColour"+prefColours, 0xff000000);
+			Integer iBgColour = sharedPrefs.getInt("bgColour"+prefColours, 0xffffffff);
 			//showToast(""+iTextColour);
 			// Set background
 			RelativeLayout displayView = (RelativeLayout) findViewById(R.id.displayView);
