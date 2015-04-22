@@ -8,11 +8,11 @@
     <string name="label_cancel">Cancel</string>
     
     <string name="pref_period_text">Period name (blank to disable period)</string>
-    <string name="pref_period_colours">Colours for this period</string>
+    <string name="pref_period_colours">Colour scheme for this period</string>
     <string name="pref_period_allDays">Period occurs every day</string>
     <string name="pref_period_start">Start time</string> <!-- Default values: 0 = 1am; -60000 = 12.59am; 39,600,000 = noon i.e. ((H-1)*60+M)*60000 -->
     <string name="pref_period_days">Set active days for this period</string>
-    <string name="pref_period_tillNext">Until next period starts</string>
+    <string name="pref_period_tillNext">End when next period starts</string>
     <string name="pref_period_end">End time</string>
 
     <!-- Default values: 0 = 1am; -60,000 = 12.59am; 39,600,000 = noon i.e. ((H-1)*60+M)*60000 -->
