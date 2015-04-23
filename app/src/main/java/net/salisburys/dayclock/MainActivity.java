@@ -43,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
      //   ActionBar actionBar = getSupportActionBar();
      //   actionBar.setDisplayHomeAsUpEnabled(true);
 		PreferenceManager.setDefaultValues(this, R.xml.preferences_fragment,
-				false);
+				true);
 		sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
 		TickHandler tickHandler = new TickHandler();
