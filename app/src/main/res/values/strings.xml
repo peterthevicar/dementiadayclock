@@ -3,6 +3,7 @@
 
     <string name="app_name">Day Clock</string>
     <string name="action_preferences">Settings</string>
+    <string name="action_about">About</string>
 
     <string name="label_OK">OK</string>
     <string name="label_cancel">Cancel</string>

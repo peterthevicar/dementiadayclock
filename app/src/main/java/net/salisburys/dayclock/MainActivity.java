@@ -279,7 +279,10 @@ public class MainActivity extends ActionBarActivity {
                 inSettings=true;
             }
 			return true;
-		case android.R.id.home:
+            case R.id.action_about:
+                //TODO
+            return true;
+            case android.R.id.home:
 			// Implement UP
 			popSettings();
 		default:
