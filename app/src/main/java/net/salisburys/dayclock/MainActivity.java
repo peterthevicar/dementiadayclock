@@ -3,6 +3,9 @@ package net.salisburys.dayclock;
 import java.util.Calendar;
 import java.util.Set;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.TypedValue;
@@ -11,6 +14,7 @@ import android.text.format.Time;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -72,6 +76,7 @@ public class MainActivity extends ActionBarActivity {
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_main, container,
 					false);
+
 			return rootView;
 		}
 
@@ -267,26 +272,51 @@ public class MainActivity extends ActionBarActivity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		switch (item.getItemId()) {
-		case R.id.action_preferences:
-			// Add preferences fragment if not there already
-			if (getFragmentManager().getBackStackEntryCount() < 1) {
-				FragmentTransaction trans = getFragmentManager()
-						.beginTransaction();
-				settingsFrag = new SettingsFragment();
-				trans.replace(R.id.container, settingsFrag);
-				trans.addToBackStack(null);
-				trans.commit();
-                inSettings=true;
-            }
-			return true;
-            case R.id.action_about:
-                //TODO
-            return true;
-            case android.R.id.home:
-			// Implement UP
-			popSettings();
-		default:
-			return super.onOptionsItemSelected(item);
+			case R.id.action_preferences:
+				// Add preferences fragment if not there already
+				if (getFragmentManager().getBackStackEntryCount() < 1) {
+					FragmentTransaction trans = getFragmentManager()
+							.beginTransaction();
+					settingsFrag = new SettingsFragment();
+					trans.replace(R.id.container, settingsFrag);
+					trans.addToBackStack(null);
+					trans.commit();
+					inSettings=true;
+				}
+				return true;
+			case R.id.action_about:
+				//TODO - modularise the dialog handler and implement help
+				Context myViewContext=findViewById(R.id.displayView).getContext();
+				AlertDialog.Builder builder = new AlertDialog.Builder(myViewContext);
+
+				String myVersionName="0";
+				try {
+					myVersionName = getApplicationContext().getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+				} catch (PackageManager.NameNotFoundException e) {
+					e.printStackTrace();
+				}
+				builder.setTitle(R.string.about_dialog_title);
+				builder.setMessage(getString(R.string.about_dialog_version) + " " + myVersionName + getString(R.string.about_dialog_text))
+						.setCancelable(true)
+//						.setPositiveButton(R.string.label_OK, new DialogInterface.OnClickListener() {
+//							public void onClick(DialogInterface dialog, int id) {
+//								// TODO: handle the OK
+//							}
+//						})
+						.setNegativeButton(R.string.label_cancel, new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								dialog.cancel();
+							}
+						});
+
+				AlertDialog alertDialog = builder.create();
+				alertDialog.show();
+				return true;
+			case android.R.id.home:
+				// Implement UP
+				popSettings();
+			default:
+				return super.onOptionsItemSelected(item);
 		}
 	}
 	/*
