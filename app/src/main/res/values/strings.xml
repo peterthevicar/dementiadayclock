@@ -3,11 +3,44 @@
 
     <string name="app_name">Day Clock</string>
     <string name="action_preferences">Settings</string>
-    <string name="action_about">About</string>
 
+    <string name="action_about">About</string>
     <string name="about_dialog_title">About Day Clock</string>
     <string name="about_dialog_version">Day Clock is now at version</string>
-    <string name="about_dialog_text">\npeterthevicar</string>
+    <string name="about_dialog_text">\nAuthor: peterthevicar\n
+Open Source at sourceforge and github\n\n
+Changes:\n
+* v4.1 Define Normal, Contrast and Night colour schemes plus five spare schemes to allow a different colour scheme for each period as requested. Add About, Help and Thanks in menu\n
+* v4.0.1 Fixed time display for some KitKat tablets. If you have problems try uninstalling and re-installing.\n
+* v4.0 Implement time display. Set size to zero if you don\'t want it displayed at all. Thanks to everyone who made this suggestion. Also moved to Android Studio so slightly more future proof!\n
+* v3.2 Implement \'Keep screen on\' option as requested - thanks for the suggestion Charles R.\n
+* v3.1 Better default colours (i.e. NOT black text on black background!)\n
+* v3 Allow selecting colours for text and background (thanks to chiralcode for the colorpicker)\n
+* v2 Thanks to Barb S for pointing out bugs in the handling of time zones. Hopefully now fixed.\n
+* v1 First release
+    </string>
+
+    <string name="action_thanks">Thanks</string>
+    <string name="thanks_dialog_title">Thanks</string>
+    <string name="thanks_dialog_text">This app could not have been written without:\n
+* My wife Sarah, her patience and her mother Blanche who inspired me to produce this app;\n
+* The Open Source community for everything;\n
+* Chiralcode for the color picker;\n
+* The users of the app who have made suggestions, especially Barb S, Alice L, Simon O and Charles R;\n
+* A special mention for Simon O who actually sent me donations despite my saying no need!\n
+* The Stackoverflow community for many answers;\n
+* Google for the excellent Android documentation.
+    </string>
+
+    <string name="action_help">Help</string>
+    <string name="help_dialog_title">Help with Day Clock</string>
+    <string name="help_dialog_text">* What\'s what? The display shows four pieces of information: the first line is for the initial text such as \'It is now\'; the second line tells you the day of the week, e.g Monday; the third line tells you the period within the day, e.g. Afternoon; and finally the fourth line shows the actual time of day, e.g. 9.26 pm.\n\n
+* Why \'Early hours\'? The first period is, by default, called \'Early hours\'. This is to get over the problem that the day of the week changes at midnight. It can very confusing if Thursday Night changes to Friday Night at midnight as though a whole day has passed. Day Clock introduces the \'Early hours\' period so it changes from Thursday Night to Friday Early hours. The \'Early hours\' name also helps to emphasise that this is NOT a good time to ring relatives! Of course you can change the name of the midnight period to Night if you don\'t like this approach. Note that you need to have at least ONE of your periods starting at midnight or Day Clock won\'t have a period name to display until the period with the earliest start time begins (it doesn\'t crash it just leaves out the period name altogether).\n\n
+* Changing the sizes of the text. The first part of the settings menu (General) allows you to adjust the size of the text on each line individually. If you don\'t want a line to be displayed at all just set its size to 0. For example if showing the actual time is too confusing just set the \'Time text size\' to 0. By default the time size is tiny as it\'s probably not a good idea to show it, but I wanted people to know it\'s available.\n\n
+* Changing the background and text colours. Each period during the day can have a different colour scheme (background and text colours). You set up the colour schemes in the second part of the settings menu (Colour schemes). Each colour scheme has a name (Normal, Contrast, Night etc) and each period of the day can choose one of the colour schemes for its display. By default the \'Early hours\' and \'Night\' periods use the Night scheme while all the others use Normal except for Tea Time which uses Contrast. The default settings for the Night theme are designed to minimise the light coming from the display.\n\n
+* Changing the names and times of the periods of the day. You can define up to 8 periods in a day. Each period has a name (e.g. Morning) a start and end time, a list of days it occurs and a colour scheme. To disable a period altogether just delete its name. You will normally want periods to end when the next begins (End when next period starts) giving a progression from one period to the next to the next. However you can also set the times to have a period entirely within another period, e.g. Supper time within Evening so you get Evening, Supper Time, and then back to Evening. Day Clock tries to be sensible about such overlapping periods and doesn\'t need the periods to be listed in the order they come in the day.\n\n
+* What\'s the point of the \'Period occurs every day\' option? Most periods (e.g. Morning) are going to occur every day so you would use this option. But you may have something like \'Carers visit\' which only happen on some days of the week. In that case you would clear the \'Period occurs every day\' option and just select the days when the carers actually visit. Day Clock will then only display \'Carers visit\' on the days you have selected (and at the time you have defined in the other settings). That would be a good example of a period which might use the Contrast colour scheme to draw attention.\n\n
+    </string>
 
     <string name="label_OK">OK</string>
     <string name="label_cancel">Cancel</string>

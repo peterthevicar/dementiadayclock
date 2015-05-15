@@ -266,6 +266,20 @@ public class MainActivity extends ActionBarActivity {
         // This is to avoid the app closing when back is pressed in settings fragment
         if (popSettings()) super.onBackPressed();
     }
+    private void displayDialog(int title, String message) {
+        Context myViewContext=findViewById(R.id.displayView).getContext();
+        AlertDialog.Builder builder = new AlertDialog.Builder(myViewContext);
+        builder.setTitle(title);
+        builder.setMessage(message)
+                .setCancelable(true)
+                .setNegativeButton(R.string.label_OK, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
     @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
@@ -285,34 +299,21 @@ public class MainActivity extends ActionBarActivity {
 				}
 				return true;
 			case R.id.action_about:
-				//TODO - modularise the dialog handler and implement help
-				Context myViewContext=findViewById(R.id.displayView).getContext();
-				AlertDialog.Builder builder = new AlertDialog.Builder(myViewContext);
-
 				String myVersionName="0";
 				try {
 					myVersionName = getApplicationContext().getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
 				} catch (PackageManager.NameNotFoundException e) {
 					e.printStackTrace();
 				}
-				builder.setTitle(R.string.about_dialog_title);
-				builder.setMessage(getString(R.string.about_dialog_version) + " " + myVersionName + getString(R.string.about_dialog_text))
-						.setCancelable(true)
-//						.setPositiveButton(R.string.label_OK, new DialogInterface.OnClickListener() {
-//							public void onClick(DialogInterface dialog, int id) {
-//								// TODO: handle the OK
-//							}
-//						})
-						.setNegativeButton(R.string.label_cancel, new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								dialog.cancel();
-							}
-						});
-
-				AlertDialog alertDialog = builder.create();
-				alertDialog.show();
+                displayDialog(R.string.about_dialog_title, getString(R.string.about_dialog_version) + " " + myVersionName + getString(R.string.about_dialog_text));
 				return true;
-			case android.R.id.home:
+            case R.id.action_thanks:
+                displayDialog(R.string.thanks_dialog_title, getString(R.string.thanks_dialog_text));
+                return true;
+            case R.id.action_help:
+                displayDialog(R.string.help_dialog_title, getString(R.string.help_dialog_text));
+                return true;
+            case android.R.id.home:
 				// Implement UP
 				popSettings();
 			default:
