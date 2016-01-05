@@ -9,8 +9,8 @@
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
-            <option value="/Disks/Data/Peter/9-Personal/home/Android/AndroidStudioProjects/dementiadayclock" />
-            <option value="/Disks/Data/Peter/9-Personal/home/Android/AndroidStudioProjects/dementiadayclock/app" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
       </GradleProjectSettings>

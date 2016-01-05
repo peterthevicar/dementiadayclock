@@ -25,11 +25,17 @@
         <item>am/pm (9:26 pm)</item>
         <item>Simple (9:26)</item>
         <item>24 hour (21:26)</item>
+        <item>Date (1 March)</item>
+        <item>Date (March 1)</item>
+        <item>Date Time (1 March 21:26)</item>
     </string-array>
     <string-array name="pref_TIM_values">
         <item>h:mm a</item>
         <item>h:mm</item>
         <item>HH:mm</item>
+        <item>d LLLL</item>
+        <item>LLLL d</item>
+        <item>d LLLL HH:mm</item>
     </string-array>
     <string-array name="pref_TIM_defaultValues">
     </string-array>
