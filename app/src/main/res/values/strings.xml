@@ -10,6 +10,7 @@
     <string name="about_dialog_text">\nAuthor: peterthevicar\n
 Open Source at sourceforge and github\n\n
 Changes:\n
+* v4.2.1 Fix date/time formats for older Android versions
 * v4.2 Allow display of date as well as, or instead of, time - thanks to Blanche for the suggestion. \n
 * v4.1 Define Normal, Contrast and Night colour schemes plus five spare schemes to allow a different colour scheme for each period as requested. Add About, Help and Thanks in menu\n
 * v4.0.1 Fixed time display for some KitKat tablets. If you have problems try uninstalling and re-installing.\n
