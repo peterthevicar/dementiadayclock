@@ -29,10 +29,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: net.salisburys.dayclock" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="392d7376-38b5-42e2-b2c9-ca993fbc090e" name="Default" comment="Add custom date format and last line.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Release/DayClock-v4-3.apk" afterPath="$PROJECT_DIR$/Release/DayClock-v4-3.apk" />
+    <list default="true" id="392d7376-38b5-42e2-b2c9-ca993fbc090e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
     </list>
     <ignored path="DayClock.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2651,7 +2649,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460937842769</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add custom date format and last line.">
+      <created>1460938929038</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1460938929038</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
