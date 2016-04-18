@@ -2,11 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.salisburys.dayclock"
     android:versionCode="10"
-    android:versionName="4.2.1" >
-
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="22" />
+    android:versionName="4.3" >
 
     <application
         android:allowBackup="true"
@@ -20,7 +16,11 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

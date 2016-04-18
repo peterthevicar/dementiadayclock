@@ -10,7 +10,8 @@
     <string name="about_dialog_text">\nAuthor: peterthevicar\n
 Open Source at sourceforge and github\n\n
 Changes:\n
-* v4.2.1 Fix date/time formats for older Android versions
+* v4.3 Add custom date format and optional last line text - thanks for the suggestions Charles R and Nick M.\n
+* v4.2.1 Fix date/time formats for older Android versions\n
 * v4.2 Allow display of date as well as, or instead of, time - thanks to Blanche for the suggestion. \n
 * v4.1 Define Normal, Contrast and Night colour schemes plus five spare schemes to allow a different colour scheme for each period as requested. Add About, Help and Thanks in menu\n
 * v4.0.1 Fixed time display for some KitKat tablets. If you have problems try uninstalling and re-installing.\n
@@ -36,7 +37,7 @@ Changes:\n
 
     <string name="action_help">Help</string>
     <string name="help_dialog_title">Help with Day Clock</string>
-    <string name="help_dialog_text">* What\'s what? The display shows four pieces of information: the first line is for the initial text such as \'It is now\'; the second line tells you the day of the week, e.g Monday; the third line tells you the period within the day, e.g. Afternoon; and finally the fourth line shows the actual time of day, or the date or both, e.g. 9.26 pm or 1 March.\n\n
+    <string name="help_dialog_text">* What\'s what? The display shows four pieces of information: the first line is for the initial text such as \'It is now\'; the second line tells you the day of the week, e.g Monday; the third line tells you the period within the day, e.g. Afternoon; the fourth line shows the actual time of day, or the date or both, e.g. 9.26 pm or 1 March (for custom formats Google for SimpleDateFormat); the last line can be any text you like, e.g. an emergency phone number or important date.\n\n
 * Why \'Early hours\'? The first period is, by default, called \'Early hours\'. This is to get over the problem that the day of the week changes at midnight. It can very confusing if Thursday Night changes to Friday Night at midnight as though a whole day has passed. Day Clock introduces the \'Early hours\' period so it changes from Thursday Night to Friday Early hours. The \'Early hours\' name also helps to emphasise that this is NOT a good time to ring relatives! Of course you can change the name of the midnight period to Night if you don\'t like this approach. Note that you need to have at least ONE of your periods starting at midnight or Day Clock won\'t have a period name to display until the period with the earliest start time begins (it doesn\'t crash it just leaves out the period name altogether).\n\n
 * Changing the sizes of the text. The first part of the settings menu (General) allows you to adjust the size of the text on each line individually. If you don\'t want a line to be displayed at all just set its size to 0. For example if showing the actual time is too confusing just set the \'Time text size\' to 0. By default the time size is tiny as it\'s probably not a good idea to show it, but I wanted people to know it\'s available.\n\n
 * Changing the background and text colours. Each period during the day can have a different colour scheme (background and text colours). You set up the colour schemes in the second part of the settings menu (Colour schemes). Each colour scheme has a name (Normal, Contrast, Night etc) and each period of the day can choose one of the colour schemes for its display. By default the \'Early hours\' and \'Night\' periods use the Night scheme while all the others use Normal except for Tea Time which uses Contrast. The default settings for the Night theme are designed to minimise the light coming from the display.\n\n

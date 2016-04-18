@@ -1,128 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="prefs_root">
 
     <PreferenceScreen
         android:persistent="false"
-        android:title="General"
-        android:summary="Text size, time format, keep screen on">
-        <net.salisburys.dayclock.TextPrefSummary
-            android:defaultValue="It is now"
-            android:key="prologue"
-            android:title="Initial text, e.g. It is now" />
-        <net.salisburys.dayclock.TextPrefSummary
-            android:defaultValue="40"
-            android:inputType="number"
-            android:key="prologueSize"
-            android:title="Initial text size (0 to disable)" />
-        <net.salisburys.dayclock.TextPrefSummary
-            android:defaultValue="70"
-            android:inputType="number"
-            android:key="dateDOWSize"
-            android:title="Day text size (0 to disable)" />
-        <net.salisburys.dayclock.TextPrefSummary
-            android:defaultValue="60"
-            android:inputType="number"
-            android:key="datePERSize"
-            android:title="Period text size (0 to disable)" />
-        <net.salisburys.dayclock.TextPrefSummary
-            android:defaultValue="10"
-            android:inputType="number"
-            android:key="dateTIMSize"
-            android:title="Time text size (0 to disable)" />
-        <ListPreference
-            android:defaultValue="h:mm a"
-            android:entries="@array/pref_TIM_names"
-            android:entryValues="@array/pref_TIM_values"
-            android:key="dateTIMFormat"
-            android:title="Time display format" />
+        android:summary="Text size, time format, keep screen on"
+        android:title="General">
 
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="keepScreenOn"
-            android:title="Keep screen on always" />
-        
+        <PreferenceCategory
+            android:key="dcCat1"
+            android:title="First line">
+            <net.salisburys.dayclock.TextPrefSummary
+                android:defaultValue="It is now"
+                android:key="prologue"
+                android:title="First line, e.g. It is now" />
+            <net.salisburys.dayclock.TextPrefSummary
+                android:defaultValue="40"
+                android:inputType="number"
+                android:key="prologueSize"
+                android:title="First line text size (0 to disable)" />
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="dcCat2"
+            android:title="Day of the week">
+            <net.salisburys.dayclock.TextPrefSummary
+                android:defaultValue="70"
+                android:inputType="number"
+                android:key="dateDOWSize"
+                android:title="Day text size (0 to disable)" />
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="dcCat3"
+            android:title="Period of the day">
+            <net.salisburys.dayclock.TextPrefSummary
+                android:defaultValue="60"
+                android:inputType="number"
+                android:key="datePERSize"
+                android:title="Period text size (0 to disable)" />
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="dcCat4"
+            android:title="Time display">
+            <net.salisburys.dayclock.TextPrefSummary
+                android:defaultValue="10"
+                android:inputType="number"
+                android:key="dateTIMSize"
+                android:title="Time text size (0 to disable)" />
+            <net.salisburys.dayclock.ListPrefSummary
+                android:defaultValue="h:mm a"
+                android:entries="@array/pref_TIM_names"
+                android:entryValues="@array/pref_TIM_values"
+                android:key="dateTIMFormat"
+                android:title="Time display format" />
+            <net.salisburys.dayclock.TextPrefSummary
+                android:defaultValue="h:mm a"
+                android:key="dateTIMFormatCust"
+                android:title="Custom (Google for SimpleDateFormat)" />
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="dcCat5"
+            android:title="Last line">
+            <net.salisburys.dayclock.TextPrefSummary
+                android:defaultValue="Last line (off by default)"
+                android:key="bottomText"
+                android:title="Text for last line" />
+            <net.salisburys.dayclock.TextPrefSummary
+                android:defaultValue="0"
+                android:key="bottomSize"
+                android:title="Last line text size (0 to disable)" />
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="dcCat6"
+            android:title="Screen">
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="keepScreenOn"
+                android:title="Keep screen on always" />
+        </PreferenceCategory>
     </PreferenceScreen>
-	<PreferenceScreen
-	    android:key="pref_colours" 
-        android:title="Colour schemes"
-        android:summary="Text and background colours">
+
+    <PreferenceScreen
+        android:key="pref_colours"
+        android:summary="Text and background colours"
+        android:title="Colour schemes">
 
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Normal Text Colour"
             android:defaultValue="0xff000040"
-            android:key="textColour1" />
+            android:key="textColour1"
+            android:title="Normal Text Colour" />
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Normal Background Colour"
             android:defaultValue="0xffffffe0"
-            android:key="bgColour1" />
+            android:key="bgColour1"
+            android:title="Normal Background Colour" />
 
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Contrast Text Colour"
             android:defaultValue="0xffb030b0"
-            android:key="textColour2" />
+            android:key="textColour2"
+            android:title="Contrast Text Colour" />
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Contrast Background Colour"
             android:defaultValue="0xfff8f820"
-            android:key="bgColour2" />
+            android:key="bgColour2"
+            android:title="Contrast Background Colour" />
 
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Night Text Colour"
             android:defaultValue="0xff8080c0"
-            android:key="textColour3" />
+            android:key="textColour3"
+            android:title="Night Text Colour" />
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Night Background Colour"
             android:defaultValue="0xff000040"
-            android:key="bgColour3" />
+            android:key="bgColour3"
+            android:title="Night Background Colour" />
 
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Colour4 Text Colour"
             android:defaultValue="0xffffffff"
-            android:key="textColour4" />
+            android:key="textColour4"
+            android:title="Colour4 Text Colour" />
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Colour4 Background Colour"
             android:defaultValue="0xff000000"
-            android:key="bgColour4" />
+            android:key="bgColour4"
+            android:title="Colour4 Background Colour" />
 
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Colour5 Text Colour"
             android:defaultValue="0xffffffff"
-            android:key="textColour5" />
+            android:key="textColour5"
+            android:title="Colour5 Text Colour" />
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Colour5 Background Colour"
             android:defaultValue="0xff000000"
-            android:key="bgColour5" />
+            android:key="bgColour5"
+            android:title="Colour5 Background Colour" />
 
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Colour6 Text Colour"
             android:defaultValue="0xffffffff"
-            android:key="textColour6" />
+            android:key="textColour6"
+            android:title="Colour6 Text Colour" />
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Colour6 Background Colour"
             android:defaultValue="0xff000000"
-            android:key="bgColour6" />
+            android:key="bgColour6"
+            android:title="Colour6 Background Colour" />
 
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Colour7 Text Colour"
             android:defaultValue="0xffffffff"
-            android:key="textColour7" />
+            android:key="textColour7"
+            android:title="Colour7 Text Colour" />
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Colour7 Background Colour"
             android:defaultValue="0xff000000"
-            android:key="bgColour7" />
+            android:key="bgColour7"
+            android:title="Colour7 Background Colour" />
 
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Colour8 Text Colour"
             android:defaultValue="0xffffffff"
-            android:key="textColour8" />
+            android:key="textColour8"
+            android:title="Colour8 Text Colour" />
         <com.chiralcode.colorpicker.ColorPickerPreference
-            android:title="Colour8 Background Colour"
             android:defaultValue="0xff000000"
-            android:key="bgColour8" />
+            android:key="bgColour8"
+            android:title="Colour8 Background Colour" />
     </PreferenceScreen>
+
     <PreferenceScreen
         android:key="pref_period1"
-        android:title="@string/pref_period1" >
+        android:title="@string/pref_period1">
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="@string/pref_period1_text_def"
             android:key="pref_period1_text"
@@ -130,9 +172,9 @@
 
         <net.salisburys.dayclock.ListPrefSummary
             android:defaultValue="3"
-            android:key="pref_period1_colour"
             android:entries="@array/pref_colour_names"
             android:entryValues="@array/pref_colour_values"
+            android:key="pref_period1_colour"
             android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
@@ -169,7 +211,7 @@
 
     <PreferenceScreen
         android:key="pref_period2"
-        android:title="@string/pref_period2" >
+        android:title="@string/pref_period2">
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="@string/pref_period2_text_def"
             android:key="pref_period2_text"
@@ -177,9 +219,9 @@
 
         <net.salisburys.dayclock.ListPrefSummary
             android:defaultValue="1"
-            android:key="pref_period2_colour"
             android:entries="@array/pref_colour_names"
             android:entryValues="@array/pref_colour_values"
+            android:key="pref_period2_colour"
             android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
@@ -216,7 +258,7 @@
 
     <PreferenceScreen
         android:key="pref_period3"
-        android:title="@string/pref_period3" >
+        android:title="@string/pref_period3">
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="@string/pref_period3_text_def"
             android:key="pref_period3_text"
@@ -224,9 +266,9 @@
 
         <net.salisburys.dayclock.ListPrefSummary
             android:defaultValue="1"
-            android:key="pref_period3_colour"
             android:entries="@array/pref_colour_names"
             android:entryValues="@array/pref_colour_values"
+            android:key="pref_period3_colour"
             android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
@@ -263,7 +305,7 @@
 
     <PreferenceScreen
         android:key="pref_period4"
-        android:title="@string/pref_period4" >
+        android:title="@string/pref_period4">
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="@string/pref_period4_text_def"
             android:key="pref_period4_text"
@@ -271,9 +313,9 @@
 
         <net.salisburys.dayclock.ListPrefSummary
             android:defaultValue="2"
-            android:key="pref_period4_colour"
             android:entries="@array/pref_colour_names"
             android:entryValues="@array/pref_colour_values"
+            android:key="pref_period4_colour"
             android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
@@ -310,7 +352,7 @@
 
     <PreferenceScreen
         android:key="pref_period5"
-        android:title="@string/pref_period5" >
+        android:title="@string/pref_period5">
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="@string/pref_period5_text_def"
             android:key="pref_period5_text"
@@ -318,9 +360,9 @@
 
         <net.salisburys.dayclock.ListPrefSummary
             android:defaultValue="1"
-            android:key="pref_period5_colour"
             android:entries="@array/pref_colour_names"
             android:entryValues="@array/pref_colour_values"
+            android:key="pref_period5_colour"
             android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
@@ -357,7 +399,7 @@
 
     <PreferenceScreen
         android:key="pref_period6"
-        android:title="@string/pref_period6" >
+        android:title="@string/pref_period6">
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="@string/pref_period6_text_def"
             android:key="pref_period6_text"
@@ -365,9 +407,9 @@
 
         <net.salisburys.dayclock.ListPrefSummary
             android:defaultValue="3"
-            android:key="pref_period6_colour"
             android:entries="@array/pref_colour_names"
             android:entryValues="@array/pref_colour_values"
+            android:key="pref_period6_colour"
             android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
@@ -404,7 +446,7 @@
 
     <PreferenceScreen
         android:key="pref_period7"
-        android:title="@string/pref_period7" >
+        android:title="@string/pref_period7">
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="@string/pref_period7_text_def"
             android:key="pref_period7_text"
@@ -412,9 +454,9 @@
 
         <net.salisburys.dayclock.ListPrefSummary
             android:defaultValue="1"
-            android:key="pref_period7_colour"
             android:entries="@array/pref_colour_names"
             android:entryValues="@array/pref_colour_values"
+            android:key="pref_period7_colour"
             android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
@@ -451,7 +493,7 @@
 
     <PreferenceScreen
         android:key="pref_period8"
-        android:title="@string/pref_period8" >
+        android:title="@string/pref_period8">
         <net.salisburys.dayclock.TextPrefSummary
             android:defaultValue="@string/pref_period8_text_def"
             android:key="pref_period8_text"
@@ -459,9 +501,9 @@
 
         <net.salisburys.dayclock.ListPrefSummary
             android:defaultValue="1"
-            android:key="pref_period8_colour"
             android:entries="@array/pref_colour_names"
             android:entryValues="@array/pref_colour_values"
+            android:key="pref_period8_colour"
             android:title="@string/pref_period_colours" />
 
         <net.salisburys.dayclock.TimePreference
@@ -495,5 +537,4 @@
             android:key="pref_period8_days"
             android:title="@string/pref_period_days" />
     </PreferenceScreen>
-
 </PreferenceScreen>

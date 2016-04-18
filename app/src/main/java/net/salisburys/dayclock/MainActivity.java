@@ -6,7 +6,6 @@ import java.util.Set;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.TypedValue;
 import android.text.format.DateFormat;
@@ -14,7 +13,6 @@ import android.text.format.Time;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -37,8 +35,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
-	SharedPreferences sharedPrefs;
-	SettingsFragment settingsFrag;
+	private SharedPreferences sharedPrefs;
+	private SettingsFragment settingsFrag;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -76,15 +74,15 @@ public class MainActivity extends ActionBarActivity {
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_main, container,
 					false);
-
+            current_act=getActivity();
 			return rootView;
 		}
 
-		@Override
-		public void onAttach(Activity attach_act) {
-			super.onAttach(attach_act);
-			current_act = attach_act;
-		}
+//		@Override
+//		public void onAttach(Activity attach_act) {
+//			super.onAttach(attach_act);
+//			current_act = attach_act;
+//		}
 
 		@Override
 		public void onResume() {
@@ -104,7 +102,7 @@ public class MainActivity extends ActionBarActivity {
 					scheduleTick(3000);
 				else
 					// failed to refresh so try again soon
-					scheduleTick(200);
+					scheduleTick(500);
 
 				break;
 			default:
@@ -128,7 +126,7 @@ public class MainActivity extends ActionBarActivity {
 		Calendar now = Calendar.getInstance();
 		String nowDOW = "" + now.get(Calendar.DAY_OF_WEEK);
 		Set<String> daySet = sharedPrefs.getStringSet(key, null);
-		return daySet.contains(nowDOW);
+		return daySet != null && daySet.contains(nowDOW);
 	}
 
 	private boolean refreshDisplay() {
@@ -152,8 +150,12 @@ public class MainActivity extends ActionBarActivity {
                     "datePERSize", "20"));
             Integer iTIMSize = Integer.parseInt(sharedPrefs.getString(
                     "dateTIMSize", "20"));
+            String sBottom = sharedPrefs.getString("bottomText", "");
+            Integer iBottomSize = Integer.parseInt(sharedPrefs.getString(
+                    "bottomSize", "10"));
 
-			// Now decide which period is current
+
+            // Now decide which period is current
 			//Calendar now = Calendar.getInstance();
 			//Long nowMs = 1000 * (long) (now.get(Calendar.SECOND) + 60 * (now
 			//		.get(Calendar.MINUTE) + 60 * now.get(Calendar.HOUR_OF_DAY)));
@@ -161,7 +163,7 @@ public class MainActivity extends ActionBarActivity {
 			Long nowMs = 1000 * (long) (now.second + 60 * (now.minute + 60 * now.hour));
 			//Can't use toMillis because it's time zone dependent
 			//Long nowMs = now.toMillis(true);
-			String datePeriod = "";
+			String datePeriod;
 
 			// Check each period to find the best fit for the current time
 			// I use the last active period with the latest start time
@@ -212,6 +214,7 @@ public class MainActivity extends ActionBarActivity {
 			prologueText
 					.setTextSize(TypedValue.COMPLEX_UNIT_DIP, iPrologueSize);
 			prologueText.setTextColor(iTextColour);
+
 			TextView tvDateDOW = (TextView) findViewById(R.id.dateDOW);
 			String s_dateDOW = (String) DateFormat.format("EEEE",
 					System.currentTimeMillis());
@@ -226,12 +229,20 @@ public class MainActivity extends ActionBarActivity {
 
             TextView tvDateTIM = (TextView) findViewById(R.id.dateTIM);
             String sTIMFormat = sharedPrefs.getString("dateTIMFormat", "h:mm a");
+            if (sTIMFormat.equals("CUSTOM")) sTIMFormat=sharedPrefs.getString("dateTIMFormatCust", "h:mm a");
             String sDateTIM = (String) DateFormat.format(sTIMFormat,
                     System.currentTimeMillis());
             tvDateTIM.setText(sDateTIM);
             tvDateTIM.setTextSize(TypedValue.COMPLEX_UNIT_DIP, iTIMSize);
             tvDateTIM.setTextColor(iTextColour);
-			return true;
+
+            TextView bottomText = (TextView) findViewById(R.id.bottomText);
+            bottomText.setText(sBottom);
+            bottomText
+                    .setTextSize(TypedValue.COMPLEX_UNIT_DIP, iBottomSize);
+            bottomText.setTextColor(iTextColour);
+
+            return true;
 		} catch (Exception e) {
 			showToast("Error in settings:" + e.getMessage());
 			return false;
@@ -339,7 +350,7 @@ public class MainActivity extends ActionBarActivity {
 		}
 	}
 
-	public static void setPeriodSummaries(SettingsFragment sf) {
+	private static void setPeriodSummaries(SettingsFragment sf) {
 		// Set the period preferences summaries
 		if (sf == null)
 			return;
@@ -363,7 +374,7 @@ public class MainActivity extends ActionBarActivity {
 		}
 	}
 
-	OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+	private final OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
 		public void onSharedPreferenceChanged(SharedPreferences prefs,
 				String key) {
 			//Log.e("L", "Change");
@@ -389,7 +400,7 @@ public class MainActivity extends ActionBarActivity {
 	/*
 	 * *********** Utility
 	 */
-	public void showToast(CharSequence text) {
+    private void showToast(CharSequence text) {
 		Context context = getApplicationContext();
 		int duration = Toast.LENGTH_SHORT;
 		Toast toast = Toast.makeText(context, text, duration);

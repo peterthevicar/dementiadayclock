@@ -28,6 +28,7 @@
         <item>Date (1 March)</item>
         <item>Date (March 1)</item>
         <item>Date Time (1 Mar 21:26)</item>
+        <item>Use Custom format</item>
     </string-array>
     <string-array name="pref_TIM_values">
         <item>h:mm a</item>
@@ -36,6 +37,7 @@
         <item>d MMMM</item>
         <item>MMMM d</item>
         <item>d MMM kk:mm</item>
+        <item>CUSTOM</item>
     </string-array>
     <string-array name="pref_TIM_defaultValues">
     </string-array>

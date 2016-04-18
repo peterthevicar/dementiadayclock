@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
+import static android.view.View.generateViewId;
+
 public class ColorPickerPreference extends DialogPreference {
 
     public static final int DEFAULT_COLOR = Color.WHITE;
@@ -30,7 +32,7 @@ public class ColorPickerPreference extends DialogPreference {
         layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
 
         colorPickerView = new ColorPicker(getContext());
-        colorPickerView.setId(1);
+        colorPickerView.setId(generateViewId());
 
         relativeLayout.addView(colorPickerView, layoutParams);
 
