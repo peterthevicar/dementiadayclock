@@ -89,74 +89,74 @@
         android:summary="Text and background colours"
         android:title="Colour schemes">
 
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xff000040"
             android:key="textColour1"
             android:title="Normal Text Colour" />
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xffffffe0"
             android:key="bgColour1"
             android:title="Normal Background Colour" />
 
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xffb030b0"
             android:key="textColour2"
             android:title="Contrast Text Colour" />
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xfff8f820"
             android:key="bgColour2"
             android:title="Contrast Background Colour" />
 
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xff8080c0"
             android:key="textColour3"
             android:title="Night Text Colour" />
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xff000040"
             android:key="bgColour3"
             android:title="Night Background Colour" />
 
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xffffffff"
             android:key="textColour4"
             android:title="Colour4 Text Colour" />
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xff000000"
             android:key="bgColour4"
             android:title="Colour4 Background Colour" />
 
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xffffffff"
             android:key="textColour5"
             android:title="Colour5 Text Colour" />
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xff000000"
             android:key="bgColour5"
             android:title="Colour5 Background Colour" />
 
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xffffffff"
             android:key="textColour6"
             android:title="Colour6 Text Colour" />
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xff000000"
             android:key="bgColour6"
             android:title="Colour6 Background Colour" />
 
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xffffffff"
             android:key="textColour7"
             android:title="Colour7 Text Colour" />
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xff000000"
             android:key="bgColour7"
             android:title="Colour7 Background Colour" />
 
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xffffffff"
             android:key="textColour8"
             android:title="Colour8 Text Colour" />
-        <com.chiralcode.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:defaultValue="0xff000000"
             android:key="bgColour8"
             android:title="Colour8 Background Colour" />
