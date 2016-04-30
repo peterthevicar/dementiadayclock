@@ -10,6 +10,7 @@
     <string name="about_dialog_text">\nAuthor: peterthevicar\n
 Open Source at sourceforge and github\n\n
 Changes:\n
+* v4.3.1 Allow move to SD - thanks to Charles R.\n
 * v4.3 Add custom date format and optional last line text - thanks for the suggestions Charles R and Nick M.\n
 * v4.2.1 Fix date/time formats for older Android versions\n
 * v4.2 Allow display of date as well as, or instead of, time - thanks to Blanche for the suggestion. \n
