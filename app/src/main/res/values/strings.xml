@@ -4,6 +4,17 @@
     <string name="app_name">Day Clock</string>
     <string name="action_preferences">Settings</string>
 
+    <string name="action_save">Save settings</string>
+    <string name="save_dialog_title">Save settings</string>
+    <string name="save_dialog_text">Saved settings to</string>
+    <string name="save_dialog_fail">**FAILED to save to</string>
+
+    <string name="action_load">Load settings</string>
+    <string name="load_dialog_title">Load settings</string>
+    <string name="load_dialog_text">Loaded settings from</string>
+    <string name="load_dialog_fail">**FAILED to load from</string>
+
+
     <string name="action_about">About, changes</string>
     <string name="about_dialog_title">About Day Clock</string>
     <string name="about_dialog_version">Day Clock is now at version</string>

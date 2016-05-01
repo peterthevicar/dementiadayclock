@@ -6,6 +6,7 @@ import java.util.Set;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.util.TypedValue;
 import android.text.format.DateFormat;
@@ -321,8 +322,23 @@ public class MainActivity extends ActionBarActivity {
             case R.id.action_thanks:
                 displayDialog(R.string.thanks_dialog_title, getString(R.string.thanks_dialog_text));
                 return true;
-            case R.id.action_help:
-                displayDialog(R.string.help_dialog_title, getString(R.string.help_dialog_text));
+			case R.id.action_help:
+				displayDialog(R.string.help_dialog_title, getString(R.string.help_dialog_text));
+				return true;
+			case R.id.action_save:
+				String fileName;
+                fileName = Environment.getExternalStorageDirectory().getPath() +  "/dayclock/savedprefs.xml";
+				if (PreferenceSaveRestore.saveSharedPreferences(this, sharedPrefs, fileName))
+                    displayDialog(R.string.save_dialog_title, getString(R.string.save_dialog_text) + fileName);
+                else
+                    displayDialog(R.string.save_dialog_title, getString(R.string.save_dialog_fail) + fileName);
+                return true;
+            case R.id.action_restore:
+                fileName = Environment.getExternalStorageDirectory().getPath() +  "/dayclock/savedprefs.xml";
+ 				if (PreferenceSaveRestore.restoreSharedPreferences(this, sharedPrefs, fileName))
+                    displayDialog(R.string.load_dialog_title, getString(R.string.load_dialog_text) + fileName);
+                else
+                    displayDialog(R.string.load_dialog_title, getString(R.string.load_dialog_fail) + fileName);
                 return true;
             case android.R.id.home:
 				// Implement UP
