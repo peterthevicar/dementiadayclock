@@ -4,15 +4,15 @@
     <string name="app_name">Day Clock</string>
     <string name="action_preferences">Settings</string>
 
-    <string name="action_load_save">Load/Save settings</string>
+    <string name="action_load_save">Save/Restore settings</string>
     <string name="save_dialog_title">Save settings</string>
     <string name="save_dialog_text">Saved settings to</string>
     <string name="save_dialog_fail">**FAILED to save to</string>
 
-    <string name="action_load">Load settings</string>
-    <string name="load_dialog_title">Load settings</string>
-    <string name="load_dialog_text">Loaded settings from</string>
-    <string name="load_dialog_fail">**FAILED to load from</string>
+    <string name="action_load">Restore settings</string>
+    <string name="load_dialog_title">Restore settings</string>
+    <string name="load_dialog_text">Restored settings from</string>
+    <string name="load_dialog_fail">**FAILED to restore from</string>
 
 
     <string name="action_about">About, changes</string>
@@ -21,6 +21,7 @@
     <string name="about_dialog_text">\nAuthor: peterthevicar\n
 Open Source at sourceforge and github\n\n
 Changes:\n
+* v5 Add ability to save and restore settings to SD card - thanks Charles R for the idea.\n
 * v4.4 Change from chiralcode\'s colour picker to margaritov\'s - allows hex input and colour previews.\n
 * v4.3.1 Allow move to SD - thanks to Charles R.\n
 * v4.3 Add custom date format and optional last line text - thanks for the suggestions Charles R and Nick M.\n
@@ -56,6 +57,7 @@ Changes:\n
 * Changing the background and text colours. Each period during the day can have a different colour scheme (background and text colours). You set up the colour schemes in the second part of the settings menu (Colour schemes). Each colour scheme has a name (Normal, Contrast, Night etc) and each period of the day can choose one of the colour schemes for its display. By default the \'Early hours\' and \'Night\' periods use the Night scheme while all the others use Normal except for Tea Time which uses Contrast. The default settings for the Night theme are designed to minimise the light coming from the display.\n\n
 * Changing the names and times of the periods of the day. You can define up to 8 periods in a day. Each period has a name (e.g. Morning) a start and end time, a list of days it occurs and a colour scheme. To disable a period altogether just delete its name. You will normally want periods to end when the next begins (End when next period starts) giving a progression from one period to the next to the next. However you can also set the times to have a period entirely within another period, e.g. Supper time within Evening so you get Evening, Supper Time, and then back to Evening. Day Clock tries to be sensible about such overlapping periods and doesn\'t need the periods to be listed in the order they come in the day.\n\n
 * What\'s the point of the \'Period occurs every day\' option? Most periods (e.g. Morning) are going to occur every day so you would use this option. But you may have something like \'Carers visit\' which only happen on some days of the week. In that case you would clear the \'Period occurs every day\' option and just select the days when the carers actually visit. Day Clock will then only display \'Carers visit\' on the days you have selected (and at the time you have defined in the other settings). That would be a good example of a period which might use the Contrast colour scheme to draw attention.\n\n
+* Why would I want to save or restore my setting? If you\'ve made a lot of changes to the configuration it\'s a good backup policy to save the settings to your device\'s storage. That way if you have to reset the device, or upgrade to a new device, you can copy the settings by copying the file. It\'s also useful if you want to try out a new configuration: save your current settings first in case it all goes wrong and you can soimply restore the saved set.\n\n
     </string>
 
     <string name="label_OK">OK</string>

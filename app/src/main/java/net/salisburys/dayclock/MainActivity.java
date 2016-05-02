@@ -1,5 +1,6 @@
 package net.salisburys.dayclock;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -340,12 +341,14 @@ public class MainActivity extends ActionBarActivity {
                 displayDialog(R.string.help_dialog_title, getString(R.string.help_dialog_text));
                 return true;
             case R.id.action_load_save:
-                LoadSaveFragment loadSaveFragment = new LoadSaveFragment();
-                FragmentTransaction trans = getFragmentManager().beginTransaction();
-                trans.add(R.id.container, loadSaveFragment);
-                trans.addToBackStack(null);
-                trans.commit();
-                stackInUse = true;
+                if (!stackInUse) {
+                    LoadSaveFragment loadSaveFragment = new LoadSaveFragment();
+                    FragmentTransaction trans = getFragmentManager().beginTransaction();
+                    trans.add(R.id.container, loadSaveFragment);
+                    trans.addToBackStack(null);
+                    trans.commit();
+                    stackInUse = true;
+                }
                 return true;
             case android.R.id.home:
                 // Implement UP
@@ -453,15 +456,14 @@ public class MainActivity extends ActionBarActivity {
             }
         }
         if (success)
-            displayDialog(R.string.save_dialog_title, getString(R.string.save_dialog_text) + fullName);
+            displayDialog(R.string.save_dialog_title, getString(R.string.save_dialog_text) +"\n"+ fullName);
         else
-            displayDialog(R.string.save_dialog_title, getString(R.string.save_dialog_fail) + fullName);
+            displayDialog(R.string.save_dialog_title, getString(R.string.save_dialog_fail) +"\n"+ fullName);
     }
 
     public void lsButLoad(View view) {
         boolean success=false;
         if (verifyStoragePermissions(this, dirName)) {
-            //TODO: are you sure?static
             ObjectInputStream input = null;
             try {
                 input = new ObjectInputStream(new FileInputStream(fullName));
@@ -502,14 +504,21 @@ public class MainActivity extends ActionBarActivity {
             }
         }
         if (success)
-            displayDialog(R.string.load_dialog_title, getString(R.string.load_dialog_text) + fullName);
+            displayDialog(R.string.load_dialog_title, getString(R.string.load_dialog_text) +"\n"+ fullName);
         else
-            displayDialog(R.string.load_dialog_title, getString(R.string.load_dialog_fail) + fullName);
+            displayDialog(R.string.load_dialog_title, getString(R.string.load_dialog_fail) +"\n"+ fullName);
     }
 
     public void lsButClear(View view) {
-        boolean success = false;
-        //TODO: clear settings code
+        // Clear all the saved settings
+        sharedPrefs.edit().clear().apply();
+        // Need to reload default values for prefs
+        PreferenceManager.setDefaultValues(this, R.xml.preferences_fragment, true);
+    }
+
+    public void lsButDone(View view) {
+        // Remove the fragment
+        popStack();
     }
     // Storage Permissions
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -520,10 +529,7 @@ public class MainActivity extends ActionBarActivity {
 
     /**
      * Checks if the app has permission to write to device storage
-     * <p/>
      * If the app does not has permission then the user will be prompted to grant permissions
-     *
-     * @param activity
      */
     public static boolean verifyStoragePermissions(Activity activity, String dirName) {
         // Check if we have write permission
@@ -540,8 +546,12 @@ public class MainActivity extends ActionBarActivity {
             permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
         if (permission == PackageManager.PERMISSION_GRANTED) {
-            //TODO: create directory dirName if not present
-            success = true;
+            // Have the right permissions so make sure directory exists
+            File saveDir = new File(dirName);
+            if (!saveDir.isDirectory()) {
+                saveDir.mkdirs();
+            }
+            success = (saveDir.isDirectory());
         }
         return success;
     }

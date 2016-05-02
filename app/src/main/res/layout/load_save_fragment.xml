@@ -1,35 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="#60000000"
+    android:padding="10dp">
+
     <TextView
         android:id="@+id/lsTitle"
-        android:text="Load and Save Settings"
-        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:textSize="40dp"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Save and Restore Settings"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/lsButSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save settings"
         android:layout_below="@+id/lsTitle"
-        android:onClick="lsButSave"/>
-    <Button
-        android:id="@+id/lsButLoad"
+        android:onClick="lsButSave"
+        android:text="Save settings" />
+
+    <TextView
+        android:id="@+id/lsWarn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Load Settings"
-        android:layout_below="@+id/lsTitle"
-        android:layout_toRightOf="@id/lsButSave"
-        android:onClick="lsButLoad"/>
-    <Button
-        android:id="@+id/lsButClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clear all Settings"
         android:layout_below="@+id/lsButSave"
-        android:onClick="lsButClear"/>
+        android:text="BEWARE: these will overwrite your current settings"
+        android:textColor="#FF0000"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/lsLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lsWarn"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/lsButLoad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lsWarn"
+            android:layout_weight="50"
+            android:onClick="lsButLoad"
+            android:text="Restore Settings" />
+
+        <Button
+            android:id="@+id/lsButClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lsWarn"
+            android:layout_toRightOf="@+id/lsButLoad"
+            android:layout_weight="50"
+            android:onClick="lsButClear"
+            android:text="Clear all Settings" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/lsButDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lsLinear"
+        android:onClick="lsButDone"
+        android:text="Done" />
 
 </RelativeLayout>
