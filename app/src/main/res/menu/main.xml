@@ -10,14 +10,9 @@
         android:title="@string/action_preferences"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/action_save"
+        android:id="@+id/action_load_save"
         android:orderInCategory="105"
-        android:title="@string/action_save"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/action_restore"
-        android:orderInCategory="106"
-        android:title="@string/action_load"
+        android:title="@string/action_load_save"
         app:showAsAction="never"/>
 
     <item

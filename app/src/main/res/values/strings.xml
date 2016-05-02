@@ -4,7 +4,7 @@
     <string name="app_name">Day Clock</string>
     <string name="action_preferences">Settings</string>
 
-    <string name="action_save">Save settings</string>
+    <string name="action_load_save">Load/Save settings</string>
     <string name="save_dialog_title">Save settings</string>
     <string name="save_dialog_text">Saved settings to</string>
     <string name="save_dialog_fail">**FAILED to save to</string>
@@ -60,7 +60,7 @@ Changes:\n
 
     <string name="label_OK">OK</string>
     <string name="label_cancel">Cancel</string>
-    
+
     <string name="pref_period_text">Period name (blank to disable period)</string>
     <string name="pref_period_colours">Colour scheme for this period</string>
     <string name="pref_period_allDays">Period occurs every day</string>
@@ -95,5 +95,8 @@ Changes:\n
     <string name="pref_period8_text_def"></string>
     <string name="pref_period8_start_def">-3600000</string>
     <string name="summary_disabled">&lt;not set&gt;></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

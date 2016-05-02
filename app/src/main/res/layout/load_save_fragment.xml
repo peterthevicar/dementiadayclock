@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/lsTitle"
+        android:text="Load and Save Settings"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:textSize="40dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/lsButSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save settings"
+        android:layout_below="@+id/lsTitle"
+        android:onClick="lsButSave"/>
+    <Button
+        android:id="@+id/lsButLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Settings"
+        android:layout_below="@+id/lsTitle"
+        android:layout_toRightOf="@id/lsButSave"
+        android:onClick="lsButLoad"/>
+    <Button
+        android:id="@+id/lsButClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear all Settings"
+        android:layout_below="@+id/lsButSave"
+        android:onClick="lsButClear"/>
+
+</RelativeLayout>
