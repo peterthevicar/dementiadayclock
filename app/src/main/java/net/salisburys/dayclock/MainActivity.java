@@ -227,8 +227,10 @@ public class MainActivity extends ActionBarActivity {
             prologueText.setTextColor(iTextColour);
 
             TextView tvDateDOW = (TextView) findViewById(R.id.dateDOW);
+            Integer iDowOffset = Integer.parseInt(sharedPrefs.getString(
+                    "dateTIMEDowOffset", "0"));
             String s_dateDOW = (String) DateFormat.format("EEEE",
-                    System.currentTimeMillis());
+                    System.currentTimeMillis() - (iDowOffset * 3600 * 1000));
             tvDateDOW.setText(s_dateDOW);
             tvDateDOW.setTextSize(TypedValue.COMPLEX_UNIT_DIP, iDOWSize);
             tvDateDOW.setTextColor(iTextColour);
