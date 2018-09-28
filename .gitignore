@@ -20,3 +20,4 @@ gen/
 build/
 app/build/
 .gradle/
+/gradle
