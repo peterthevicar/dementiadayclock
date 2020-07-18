@@ -21,6 +21,7 @@
     <string name="about_dialog_text">\nAuthor: peterthevicar\n
 Open Source at sourceforge and github\n\n
 Changes:\n
+* v5.02 Update to latest Android Studio version as required by Google.\n
 * v5.01 Update to latest Android Studio version as required by Google. Sadly drops support for older Androids.\n
 * v5 Add ability to save and restore settings to SD card - thanks Charles R for the idea.\n
 * v4.4 Change from chiralcode\'s colour picker to margaritov\'s - allows hex input and colour previews.\n
