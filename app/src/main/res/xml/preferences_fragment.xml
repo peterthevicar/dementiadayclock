@@ -59,6 +59,11 @@
                 android:defaultValue="h:mm a"
                 android:key="dateTIMFormatCust"
                 android:title="Custom (Google for SimpleDateFormat)" />
+            <net.salisburys.dayclock.TextPrefSummary
+                android:defaultValue="0"
+                android:inputType="number"
+                android:key="dateTIMEDowOffset"
+                android:title="DOW hour offset (how many hours after 12am until DOW switches)" />
         </PreferenceCategory>
 
         <PreferenceCategory
